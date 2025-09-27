@@ -1,0 +1,47 @@
+/chat-app
+  /src
+    /config          # config loader (env, vault integration)
+    /server.js       # starts HTTP + Socket.IO
+    /app.js          # Express app configuration
+    /routes
+      auth.js
+      users.js
+      chats.js
+      messages.js
+    /controllers
+      authController.js
+      chatController.js
+      messageController.js
+    /models
+      user.model.js
+      chat.model.js
+      message.model.js
+      attachment.model.js
+    /services
+      auth.service.js      # tokens, refresh, revoke
+      socket.service.js    # socket actions, emit helpers
+      push.service.js      # push notifications
+      storage.service.js   # S3 wrapper
+    /workers
+      indexer.worker.js
+      attachments.worker.js
+    /sockets
+      index.js             # socket.io init + middleware
+      handlers/
+        message.handler.js
+        presence.handler.js
+    /middlewares
+      auth.js
+      rateLimiter.js
+      validate.js
+      errorHandler.js
+    /utils
+      logger.js
+      zodSchemas.js        # or use AJV for JSON schema
+  /scripts
+  .env                     # 🔑 environment variables (not committed to git)
+  .gitignore               # should include `.env`
+  Dockerfile
+  docker-compose.yml
+  k8s/
+  README.md
