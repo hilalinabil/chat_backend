@@ -26,7 +26,7 @@ app.use("/api/messages", messageRoutes);
 
 // Test route
 app.get("/", (req, res) => {
-    res.json({ message: "Chat app backend is running ✅" });
+    res.json({ message: "Chat app backend is running " });
 });
 
 // Error handler
